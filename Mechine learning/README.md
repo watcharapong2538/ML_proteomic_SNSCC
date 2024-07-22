@@ -1,11 +1,11 @@
 Methodology
-Python 3.12.0
-	1	Data Loading and Preprocessing:
+
+	Python 3.12.0
+ 	1	Data Loading and Preprocessing:
 		◦	The proteomic data is loaded into a pandas DataFrame.
 		◦	Features and labels are separated.
 		◦	Data is normalized using StandardScaler.
 		◦	Data is split into training and testing sets. Splits the data into training (80%) and testing (20%) sets
-
 
 	2	Model Training and Evaluation:
 		◦	Various classifiers (RandomForest, SVM, LogisticRegression, GradientBoosting) are defined and trained on the training data.
