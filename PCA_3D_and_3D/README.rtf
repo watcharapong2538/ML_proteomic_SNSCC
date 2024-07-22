@@ -1,0 +1,46 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Bold;\f1\froman\fcharset0 Times-Roman;\f2\fmodern\fcharset0 Courier;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Methodology\
+\pard\pardeftab720\sa319\partightenfactor0
+
+\fs24 \cf0 Data Acquisition\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0 \cf0 Proteomic data for this study were obtained from SNSCC and NP patients. Specifically, the datasets were comprised of GI number (GI), nasal polyps cases (NP), and sinonasal squamous cell carcinoma cases (SNSCC) samples. Each dataset was read into R using the 
+\f2\fs26 read.table
+\f1\fs24  function with tab-delimited format, ensuring that headers were recognized and strings were not converted into factors.\
+\pard\pardeftab720\sa319\partightenfactor0
+
+\f0\b \cf0 Data Preparation\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0 \cf0 The datasets from NP and SNSCC groups were combined for Principal Component Analysis (PCA). The combined data matrix was transposed to align the features appropriately. Subsequently, a data frame was constructed from the transposed matrix, with column names assigned based on the GI dataset. Group labels were appended to this data frame to distinguish between NP and SNSCC samples.\
+\pard\pardeftab720\sa319\partightenfactor0
+
+\f0\b \cf0 Principal Component Analysis\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0 \cf0 PCA was conducted on the combined dataset, excluding the group labels, using the 
+\f2\fs26 prcomp
+\f1\fs24  function with scaling enabled to normalize the data. The resulting principal components were extracted and formatted into a data frame. Group labels were again appended to this data frame for subsequent analysis and visualization.\
+\pard\pardeftab720\sa319\partightenfactor0
+
+\f0\b \cf0 Visualization\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0 \cf0 A 3D PCA plot was generated using the 
+\f2\fs26 plotly
+\f1\fs24  library to visualize the separation between NP and SNSCC groups. The 
+\f2\fs26 plot_ly
+\f1\fs24  function was utilized to create a scatter plot with PC1, PC2, and PC3 as the axes. Data points were colored according to their group labels using a predefined color scheme. To enhance interpretability, annotations were added to mark the centroids of NP and SNSCC groups, calculated as the mean of their respective principal component scores. These annotations included arrows pointing to the centroids with text labels for NP and SNSCC.\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 \
+}
