@@ -5,23 +5,19 @@ Methodology
 		◦	The proteomic data is loaded into a pandas DataFrame.
 		◦	Features and labels are separated.
 		◦	Data is normalized using StandardScaler.
+		◦	Divides samples into sequential groups of 3 
 		◦	Data is split into training and testing sets. Splits the data into training (80%) and testing (20%) sets
 
 	2	Model Training and Evaluation:
 		◦	Various classifiers (RandomForest, SVM, LogisticRegression, GradientBoosting) are defined and trained on the training data.
-		◦	Each model is  evaluated in training data using cross-validation 
 		◦	Models are evaluated on the testing data using accuracy, precision, recall, F1-score, AUROC, AUPRC, specificity, and sensitivity.
-		◦	Cross-validation scores (KFold and LeaveOneOut) are computed (5 kFold).
-		◦	Feature importances are saved for interpretability.
+ 		◦	Feature importances are saved for interpretability.
+		◦	Leave-one-group-out cross validation (LOGO-CV) was applied to the entire dataset, and the accuracy score was reported.
 
 	3	Results Compilation:
 		◦	The performance metrics for each model are compiled into a DataFrame.
 		◦	Feature importances are saved to CSV files.
 	
-	This code can be used to classify SNSCC and NP proteomic data effectively, providing detailed performance metrics and feature importances for each model.
-	This code demonstrates the process of data normalization, splitting into training and testing sets, training multiple machine learning models, evaluating their performance using cross-validation, and saving the results and feature importances. It provides a comprehensive approach to model selection and evaluation in a machine learning workflow.
-
-
 
 	Model Evaluation on Testing Set
 	After training the models using the training set, the following steps are taken to evaluate the performance of each model on the testing set:
@@ -51,6 +47,6 @@ Methodology
 		◦	Sensitivity (Recall): The ratio of true positive predictions to the total actual positives.
 
 	8	Standard Deviation of Cross-Validation Scores:
-		◦	The standard deviation of the cross-validation scores (KFold and LeaveOneOut) is calculated to assess the model's stability.
+		◦	The standard deviation of the cross-validation scores (KFold and LOGO-CV) is calculated to assess the model's stability.
 
-	9	Cross-Validation Scores: Provides an estimate of model performance on traning data.
+	9	Cross-Validation Scores: Provides an estimate of model performance on all dataset.
