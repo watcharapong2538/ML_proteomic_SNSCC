@@ -1,0 +1,108 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 #this code use the output of LOGO (aggregated confusion matrix) of each ML\
+\
+library(epiR)\
+\
+#Randomforest (RF)\
+# Confusion matrix values\
+TP_RF <- 40  # True Positives\
+FN_RF <- 2   # False Negatives\
+FP_RF <- 1   # False Positives\
+TN_RF <- 47  # True Negatives\
+\
+# Create confusion matrix\
+confusion_matrix_RF <- matrix(c(TP_RF, FN_RF, FP_RF, TN_RF), \
+                              nrow = 2, \
+                              byrow = TRUE,\
+                              dimnames = list("Prediction" = c("1", "0"),\
+                                              "Actual" = c("1", "0")))\
+\
+# Print the confusion matrix\
+print(confusion_matrix_RF)\
+\
+# Apply epi.tests to calculate performance metrics\
+test_results_RF <- epi.tests(confusion_matrix_RF)\
+# Print the test results\
+print(test_results_RF)\
+\
+\
+\
+\
+#Grdiant boosting (GB)\
+# Confusion matrix values\
+TP_GB <- 25  # True Positives\
+FN_GB <- 17   # False Negatives\
+FP_GB <- 7   # False Positives\
+TN_GB <- 41  # True Negatives\
+\
+# Create confusion matrix\
+confusion_matrix_GB <- matrix(c(TP_GB, FN_GB, FP_GB, TN_GB), \
+                              nrow = 2, \
+                              byrow = TRUE,\
+                              dimnames = list("Prediction" = c("1", "0"),\
+                                              "Actual" = c("1", "0")))\
+\
+# Print the confusion matrix\
+print(confusion_matrix_GB)\
+\
+# Apply epi.tests to calculate performance metrics\
+test_results_GB <- epi.tests(confusion_matrix_GB)\
+# Print the test results\
+print(test_results_GB)\
+\
+\
+\
+\
+#Logistic regression (LR)\
+# Confusion matrix values\
+TP_LR <- 37  # True Positives\
+FN_LR <- 5  # False Negatives\
+FP_LR <- 2   # False Positives\
+TN_LR <- 46  # True Negatives\
+\
+# Create confusion matrix\
+confusion_matrix_LR <- matrix(c(TP_LR, FN_LR, FP_LR, TN_LR), \
+                              nrow = 2, \
+                              byrow = TRUE,\
+                              dimnames = list("Prediction" = c("1", "0"),\
+                                              "Actual" = c("1", "0")))\
+\
+# Print the confusion matrix\
+print(confusion_matrix_LR)\
+\
+# Apply epi.tests to calculate performance metrics\
+test_results_LR <- epi.tests(confusion_matrix_LR)\
+# Print the test results\
+print(test_results_LR)\
+\
+\
+\
+#Supportor vector mechine (SVM)\
+# Confusion matrix values\
+TP_SVM <- 37  # True Positives\
+FN_SVM <- 5  # False Negatives\
+FP_SVM <- 2   # False Positives\
+TN_SVM <- 46  # True Negatives\
+\
+# Create confusion matrix\
+confusion_matrix_SVM <- matrix(c(TP_SVM, FN_SVM, FP_SVM, TN_SVM), \
+                              nrow = 2, \
+                              byrow = TRUE,\
+                              dimnames = list("Prediction" = c("1", "0"),\
+                                              "Actual" = c("1", "0")))\
+\
+# Print the confusion matrix\
+print(confusion_matrix_SVM)\
+\
+# Apply epi.tests to calculate performance metrics\
+test_results_SVM <- epi.tests(confusion_matrix_SVM)\
+# Print the test results\
+print(test_results_SVM)\
+\
+}
